@@ -17,7 +17,8 @@ namespace TicTacToeWorkshop
             }
             else
                 computerInput = 'X';
-            Console.WriteLine("Computer will play with : " +computerInput);
+            Console.WriteLine("Computer will play with : " + computerInput);
+            dispBoard();
         }
 
         public static void CreateBoard()
@@ -36,6 +37,16 @@ namespace TicTacToeWorkshop
             Console.WriteLine("Enter 'X' to select X and O to select 'O'");
             char input = Convert.ToChar(Console.ReadLine().ToUpper());
             return input;
+        }
+
+        public static void dispBoard()
+        {
+            Console.WriteLine("Current Board: \n");
+            Console.WriteLine("1 | 2 | 3 ");
+            Console.WriteLine("----------");
+            Console.WriteLine("4 | 5 | 6 ");
+            Console.WriteLine("----------");
+            Console.WriteLine("7 | 8 | 9 ");
         }
     }
 }
