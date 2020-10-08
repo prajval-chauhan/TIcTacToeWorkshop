@@ -34,7 +34,7 @@ namespace TicTacToeWorkshop
         public static char ZeroOrCross()
         {
             Console.WriteLine("Enter 'X' to select X and O to select 'O'");
-            char input = Convert.ToChar(Console.ReadLine());
+            char input = Convert.ToChar(Console.ReadLine().ToUpper());
             return input;
         }
     }
