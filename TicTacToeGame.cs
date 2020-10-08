@@ -18,7 +18,7 @@ namespace TicTacToeWorkshop
             else
                 computerInput = 'X';
             Console.WriteLine("Computer will play with : " + computerInput);
-            dispBoard(currentBoard);
+            DispBoard(currentBoard);
             
             int position = User_Input();
             if (currentBoard[position] == ' ')
@@ -29,7 +29,7 @@ namespace TicTacToeWorkshop
                 position = User_Input();
             }
             Console.Clear();
-            dispBoard(currentBoard);
+            DispBoard(currentBoard);
 
         }
         /// <summary>
@@ -59,10 +59,10 @@ namespace TicTacToeWorkshop
         /// <summary>
         /// Displays the board.
         /// </summary>
-        public static void dispBoard(char[] board)
+        public static void DispBoard(char[] board)
         {
             Console.WriteLine("Current Board: \n");
-            Console.WriteLine(board[1]+" | "+board[2]+" | "+board[3]  );
+            Console.WriteLine(board[1] + " | " + board[2] + " | " + board[3]);
             Console.WriteLine("----------");
             Console.WriteLine(board[4] + " | " + board[5] + " | " + board[6]);
             Console.WriteLine("----------");
