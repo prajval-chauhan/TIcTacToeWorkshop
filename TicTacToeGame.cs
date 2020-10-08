@@ -18,12 +18,24 @@ namespace TicTacToeWorkshop
             else
                 computerInput = 'X';
             Console.WriteLine("Computer will play with : " + computerInput);
-            dispBoard();
+            dispBoard(currentBoard);
+            
             int position = User_Input();
-            currentBoard[position] = humanInput;
+            if (currentBoard[position] == ' ')
+                currentBoard[position] = humanInput;
+            else
+            {
+                Console.WriteLine("Position not empty");
+                position = User_Input();
+            }
+            Console.Clear();
+            dispBoard(currentBoard);
 
         }
-
+        /// <summary>
+        /// creates a board with null values
+        /// </summary>
+        /// <returns></returns>
         public static char[] CreateBoard()
         {
             char[] board = new char[10];
@@ -34,24 +46,32 @@ namespace TicTacToeWorkshop
             return board;
            
         }
-
+        /// <summary>
+        /// Assigns O or X to the user input
+        /// </summary>
+        /// <returns></returns>
         public static char ZeroOrCross()
         {
             Console.WriteLine("Enter 'X' to select X and O to select 'O' : \n");
             char input = Convert.ToChar(Console.ReadLine().ToUpper());
             return input;
         }
-
-        public static void dispBoard()
+        /// <summary>
+        /// Displays the board.
+        /// </summary>
+        public static void dispBoard(char[] board)
         {
             Console.WriteLine("Current Board: \n");
-            Console.WriteLine("1 | 2 | 3 " );
+            Console.WriteLine(board[1]+" | "+board[2]+" | "+board[3]  );
             Console.WriteLine("----------");
-            Console.WriteLine("4 | 5 | 6 ");
+            Console.WriteLine(board[4] + " | " + board[5] + " | " + board[6]);
             Console.WriteLine("----------");
-            Console.WriteLine("7 | 8 | 9 ");
+            Console.WriteLine(board[7] + " | " + board[8] + " | " + board[9]);
         }
-
+        /// <summary>
+        /// Takes User input
+        /// </summary>
+        /// <returns></returns>
         public static int User_Input()
         {
             Console.WriteLine("Enter the position where you'd like to mark: ");
