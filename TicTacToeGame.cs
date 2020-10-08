@@ -9,6 +9,15 @@ namespace TicTacToeWorkshop
         {
             Console.WriteLine("Welcome to the Tic Tac Toe Program");
             CreateBoard();
+            char humanInput = ZeroOrCross();
+            char computerInput;
+            if (humanInput == 'X')
+            {
+                computerInput = 'O';
+            }
+            else
+                computerInput = 'X';
+            Console.WriteLine("Computer will play with : " +computerInput);
         }
 
         public static void CreateBoard()
@@ -20,6 +29,13 @@ namespace TicTacToeWorkshop
                 Console.WriteLine(board[i]);
             }
            
+        }
+
+        public static char ZeroOrCross()
+        {
+            Console.WriteLine("Enter 'X' to select X and O to select 'O'");
+            char input = Convert.ToChar(Console.ReadLine());
+            return input;
         }
     }
 }
