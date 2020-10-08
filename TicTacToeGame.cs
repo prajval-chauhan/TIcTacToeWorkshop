@@ -27,14 +27,13 @@ namespace TicTacToeWorkshop
             for (int i=0; i<board.Length; i++)
             {
                 board[i] = ' ';
-                Console.WriteLine(board[i]);
             }
            
         }
 
         public static char ZeroOrCross()
         {
-            Console.WriteLine("Enter 'X' to select X and O to select 'O'");
+            Console.WriteLine("Enter 'X' to select X and O to select 'O' : \n");
             char input = Convert.ToChar(Console.ReadLine().ToUpper());
             return input;
         }
