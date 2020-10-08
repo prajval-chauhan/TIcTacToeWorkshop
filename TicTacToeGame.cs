@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.ExceptionServices;
+using System.Transactions;
 
 namespace TicTacToeWorkshop
 {
@@ -19,6 +20,13 @@ namespace TicTacToeWorkshop
                 computerInput = 'X';
             Console.WriteLine("Computer will play with : " + computerInput);
             DispBoard(currentBoard);
+            Console.WriteLine("Choose H or T:");
+            char userToss = Convert.ToChar(Console.ReadLine());
+            int tossResult = Toss();
+            if(tossResult == 0)
+                Console.WriteLine("You Lost the Toss");
+            else
+                Console.WriteLine("You won the Toss");
             
             int position = User_Input();
             if (currentBoard[position] == ' ')
@@ -78,6 +86,11 @@ namespace TicTacToeWorkshop
             int userMove = Convert.ToInt32(Console.ReadLine());
             return userMove;
         }
-        
+        public static int Toss()
+        {
+            Random randomNum = new Random();
+            int Toss = randomNum.Next(0, 1);
+            return (Toss);
+        }
     }
 }
